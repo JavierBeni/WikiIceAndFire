@@ -1,0 +1,26 @@
+@import '../../../styles.scss';
+@import '../navbar/navbar.component.scss';
+
+.mat-tab-group.mat-primary .mat-ink-bar{
+    background: darkred;
+    height: 5px;
+  } 
+
+/* Styles for the active tab label */
+.mat-tab-label{
+    color: black;
+}
+.mat-tab-label.mat-tab-label-active {
+    color: darkred;
+}
+
+
+.fullscreen {
+    background-image: url(../../../assets/img/gradient_diagonal.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    min-height: 100vh - $mat-toolbar-heigth;
+    max-height: 100%;
+  }

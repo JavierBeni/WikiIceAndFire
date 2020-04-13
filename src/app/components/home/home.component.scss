@@ -1,0 +1,42 @@
+@import '../../../styles.scss';
+
+
+.home{
+    background-image: url(../../../assets/img/ezgif.com-webp-to-png.webp);
+    min-height: 100vh;
+    max-height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.footer{
+    position: relative;
+    vertical-align: bottom;
+    text-align: end;
+    color: mat-color($WikiIceAndFire-accent);
+    padding: 3%;
+}
+
+.title{
+    text-align: end;
+    padding: 5%;
+}
+
+.mat-h2, .mat-h1{
+    color: mat-color($WikiIceAndFire-primary);
+    text-shadow: 1px 2px 2px rgba(0, 162, 255, 0.5);
+    font-family: 'GameofThrones';
+    word-spacing: 10px;
+}
+
+.btn-login{
+    color: black;
+    background-color: mat-color($WikiIceAndFire-accent);
+    margin: 1%;
+    margin-top: 4em;
+}
+
+.btn-login:hover{
+    background-color: mat-color($WikiIceAndFire-primary);
+}

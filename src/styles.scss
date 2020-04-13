@@ -1,1 +1,44 @@
+// Custom Theming for Angular Material. For more information: https://material.angular.io/guide/theming
+@import "~@angular/material/theming";
+
+// Include the common styles for Angular Material. Be sure that you only ever include this mixin once!
+@include mat-core();
+
+// Define the palettes Available color palettes: https://material.io/design/color/
+$WikiIceAndFire-primary: mat-palette($mat-cyan);
+$WikiIceAndFire-accent: mat-palette($mat-deep-orange);
+
+// The warn palette is optional (defaults to red).
+$WikiIceAndFire-warn: mat-palette($mat-red);
+
+// Create the theme object (a Sass map containing all of the palettes).
+$WikiIceAndFire-theme: mat-dark-theme($WikiIceAndFire-primary, $WikiIceAndFire-accent, $WikiIceAndFire-warn);
+
+// Include theme styles for core and each component used in your app.
+@include angular-material-theme($WikiIceAndFire-theme);
+
 /* You can add global styles to this file, and also import other style files */
+
+html,
+body {
+  min-height: 100vh;
+  max-height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+@font-face {
+  font-family: "GameofThrones";
+  src: url("/assets/fonts/GameofThrones.eot"); /* IE9 Compat Modes */
+  src: url("/assets/fonts/GameofThrones.eot?#iefix") format("embedded-opentype"),
+    /* IE6-IE8 */ url("/assets/fonts/GameofThrones.otf") format("opentype"),
+    /* Open Type Font */ url("/assets/fonts/GameofThrones.svg") format("svg"),
+    /* Legacy iOS */ url("/assets/fonts/GameofThrones.ttf") format("truetype"),
+    /* Safari, Android, iOS */ url("/assets/fonts/GameofThrones.woff") format("woff"),
+    /* Modern Browsers */ url("/assets/fonts/GameofThrones.woff2") format("woff2"); /* Modern Browsers */
+  font-weight: normal;
+  font-style: normal;
+}

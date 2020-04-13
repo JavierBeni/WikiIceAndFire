@@ -1,0 +1,24 @@
+<mat-toolbar>
+    <mat-toolbar-row>
+        <a routerLink="/home">Wiki of <span style="color: mediumaquamarine">Ice</span> and <span
+                style="color: orangered">Fire</span></a>
+        <span class="spacer"></span>
+        <a mat-button (click)="changeTo('books')" class="animated fadeIn slow">
+            <mat-icon>library_books</mat-icon> Books
+        </a>
+        <a mat-button (click)="changeTo('characters')" class="animated fadeIn slow">
+            <mat-icon>recent_actors</mat-icon> Characters
+        </a>
+        <a mat-button (click)="changeTo('houses')" class="animated fadeIn slow">
+            <mat-icon>home</mat-icon> Houses
+        </a>
+        <span class="spacer"></span>
+        <a mat-button routerLink="/profile" *ngIf="auth.loggedIn">
+            <mat-icon class="example-tab-icon">account_circle</mat-icon>
+        </a>
+        <button mat-button class="btn-login animated fadeIn slow" (click)="auth.logout()" *ngIf="auth.loggedIn">
+            Log out
+        </button>
+    </mat-toolbar-row>
+
+</mat-toolbar>

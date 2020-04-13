@@ -1,0 +1,26 @@
+<app-navbar></app-navbar>
+
+<div class="fullscreen" *ngIf="book">
+
+    <div class="details">
+        <div>
+            <h1 class="header">Name: <span>{{book.name}}</span></h1>
+            <h1 class="header">Authors: <span>{{book.authors}}</span></h1>
+        </div>
+        <div>
+            <h2 class="header">ISBN: <span>{{book.isbn}}</span></h2>
+            <h2 class="header">Number of pages: <span>{{book.numberOfPages}}</span></h2>
+            <h2 class="header">Publisher: <span>{{book.country}}</span></h2>
+            <h2 class="header">Country: <span>{{book.publisher}}</span></h2>
+            <h2 class="header">Media type: <span>{{book.mediaType}}</span></h2>
+            <h2 class="header">Released: <span>{{book.released}}</span></h2>
+        </div>
+    </div>
+    <div>
+        <button mat-button class="btn-back animated fadeIn slow" routerLink="/list/books">
+            Back to lists
+        </button>
+    </div>
+
+
+</div>

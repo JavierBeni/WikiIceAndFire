@@ -1,0 +1,28 @@
+<app-navbar></app-navbar>
+
+<div class="fullscreen" *ngIf="character">
+
+    <div class="details">
+        <div>
+            <h1 class="header">Name: <span>{{character.name}}</span></h1>
+            <h1 class="header">Aliases: <span>{{character.aliases}}</span></h1>
+        </div>
+        <div>
+            <h2 class="header">Gender: <span>{{character.gender}}</span></h2>
+            <h2 class="header">Culture: <span>{{character.culture}}</span></h2>
+            <h2 class="header">Born: <span>{{character.born}}</span></h2>
+            <h2 class="header">Died: <span>{{character.died}}</span></h2>
+            <h2 class="header">Father: <span>{{character.father}}</span></h2>
+            <h2 class="header">Mother: <span>{{character.mother}}</span></h2>
+            <h2 class="header">Spouse: <span>{{character.spouse}}</span></h2>
+            <h2 class="header">Played by: <span>{{character.playedBy}}</span></h2>
+        </div>
+    </div>
+    <div>
+        <button mat-button class="btn-back animated fadeIn slow" routerLink="/list/characters">
+            Back to lists
+        </button>
+    </div>
+
+
+</div>

@@ -1,0 +1,22 @@
+.icon {
+    padding: 0 14px;
+}
+  
+.spacer {
+    flex: 1 1 auto;
+}
+
+a{
+    color: white;
+    text-decoration: none;
+    margin-right: 10px;
+}
+
+$mat-toolbar-heigth: 9vh;
+
+mat-toolbar{
+    min-height: $mat-toolbar-heigth;
+    position: sticky;
+    top: 0;
+    z-index: 1000; 
+}

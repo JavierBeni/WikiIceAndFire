@@ -1,0 +1,40 @@
+@import "../navbar/navbar.component.scss";
+@import "../../../styles.scss";
+
+.fullscreen {
+    background-image: url(../../../assets/img/gradient_diagonal.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    min-height: 100vh - $mat-toolbar-heigth;
+    max-height: 100%;
+    position: relative;
+}
+
+h1{
+    margin-block-start: 0em;
+}
+
+.info_profile {
+    position: absolute;
+    top: 50px;
+    left: 50px;
+}
+
+img {
+    position: absolute;
+    top: 50px;
+    right: 50px;
+}
+
+.btn-back{
+    margin-top: 10%;
+    background-color: black;
+    height: 4em;
+    color: mat-color($WikiIceAndFire-primary);
+}
+
+.btn-back:hover{
+    color: mat-color($WikiIceAndFire-accent);
+}

@@ -1,0 +1,49 @@
+@import "../../navbar/navbar.component.scss";
+@import "../../../../styles.scss";
+
+.fullscreen {
+    background-image: url(../../../../assets/img/gradient_diagonal.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    min-height: 100vh - $mat-toolbar-heigth;
+    max-height: 100%;
+    // text-align: center;
+}
+
+.details {
+    padding: 2%;
+}
+
+.spacer {
+    flex: 1 1 auto;
+}
+
+.header {
+    display: inline-block;
+    margin-right: 10%;
+    min-inline-size: 5%;
+}
+
+h1 > span, h2 > span, h3 > span{
+    // font-family: "Bodoni MT";
+    color: darkblue;
+}
+
+.characters {
+    text-align: center;
+    padding: 2%;
+    display: inline-block;
+}
+
+.btn-back {
+    margin: 5%;
+    background-color: black;
+    height: 4em;
+    color: mat-color($WikiIceAndFire-primary);
+}
+
+.btn-back:hover {
+    color: mat-color($WikiIceAndFire-accent);
+}

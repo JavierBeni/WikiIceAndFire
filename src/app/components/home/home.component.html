@@ -1,0 +1,29 @@
+<div class="grad text-center home" layout="row" layout-align="center center">
+    <div class="title animated fadeIn">
+        <h3 class="mat-h1 mat-display-1">Welcome to: </h3>
+        <h2 class="mat-h2 mat-display-2">Wiki Ice and Fire</h2>
+
+        <button mat-button class="btn-login animated fadeIn slow" (click)="auth.login('/list')" *ngIf="!auth.loggedIn">
+            Log in  or Sign up
+        </button>
+        <button mat-button class="btn-login animated fadeIn slow" (click)="auth.logout()" *ngIf="auth.loggedIn">
+            Log out
+        </button>
+        <button mat-button class="btn-login animated fadeIn slow" routerLink="/list/books" *ngIf="auth.loggedIn">
+            Lists
+        </button>
+        
+    </div>
+    <!-- <mat-divider color="primary"></mat-divider> -->
+    <div class="footer animated fadeInUp">
+        <p>© 2020 WikiIce&Fire. App created by Fº Javier Benito Barahona.</p>
+        <p><i class="far fa-envelope"> </i> javi184@hotmail.com </p>
+        <a mat-button href="https://www.linkedin.com/in/francisco-javier-benito-barahona/" target="_blank">
+            <i class="fab fa-linkedin-in"> </i>
+        </a>
+        <a mat-button href="https://github.com/JavierBeni" target="_blank">
+            <i class="fab fa-github"> </i>
+        </a>
+    </div>
+
+</div>
