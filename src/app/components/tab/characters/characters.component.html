@@ -1,10 +1,11 @@
 <div class="tab_body">
 
-    <div>
+    <div class="filter_paginator">
         <mat-form-field class="mat-form-field">
             <mat-label>Filter</mat-label>
             <input class="input" matInput (keyup)="applyFilter($event)" placeholder="Write text here">
         </mat-form-field>
+        <mat-paginator [pageSizeOptions]="[10, 25, 50]"></mat-paginator>
     </div>
 
     <div class="mat-elevation-z8">
@@ -45,13 +46,11 @@
             </ng-container>
 
             <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></tr>
-            <tr mat-row *matRowDef="let row; columns: displayedColumns;">
-            </tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"> </tr>
         </table>
 
-        <mat-paginator [pageSizeOptions]="[8, 15, 30]"></mat-paginator>
     </div>
-
+    <div class="spinner" *ngIf="loading">
+        <mat-spinner color="warn"></mat-spinner>
+    </div>
 </div>
-
-<!-- routerLink="/book/{{row.url.charAt(row.url.length - 1)}}"-->

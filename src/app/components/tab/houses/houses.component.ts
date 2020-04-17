@@ -15,15 +15,16 @@ import { MatTableDataSource } from '@angular/material/table';
 export class HousesComponent implements OnInit {
 
 
-  housesOriginal: House[] = [];
-
-  displayedColumns: string[] = ['name', 'gender', 'culture', 'aliases', 'born', 'playedBy', 'detail'];
+  houses: House[] = [];
+  loading: boolean = true;
+  displayedColumns: string[] = ['name', 'region', 'coatOfArms', 'words', 'titles', 'seats', 'detail'];
   dataSource: MatTableDataSource<House>;
 
   @ViewChild(MatPaginator, { static: true }) paginator: MatPaginator;
   @ViewChild(MatSort, { static: true }) sort: MatSort;
 
   constructor(public auth: AuthService, public _api: ApiService, private router: Router) {
+    this.loading = true;
     this.loadHouses(1);
   }
 
@@ -39,25 +40,22 @@ export class HousesComponent implements OnInit {
     }
   }
 
-  // compareS(a: House, b: House) { return (a.culture > b.culture) ? 1 : -1 }
-
   loadHouses(page: number) {
 
     this._api.getHouses(page.toString()).subscribe((resp: House[]) => {
 
-      this.housesOriginal = this.housesOriginal.concat(resp);
+      this.houses = this.houses.concat(resp);
       if (resp.length !== 0)
         this.loadHouses(page + 1)
       else {
-        // this.housesOriginal.sort(this.compareS);
 
-        this.dataSource = new MatTableDataSource(this.housesOriginal);
+        this.dataSource = new MatTableDataSource(this.houses);
         this.dataSource.paginator = this.paginator;
         this.dataSource.sort = this.sort;
+        this.loading = false;
       }
     });
   }
-
 
   detail(url: string) {
     let temp: string[] = url.split('/');

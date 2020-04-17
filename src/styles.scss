@@ -9,7 +9,7 @@ $WikiIceAndFire-primary: mat-palette($mat-cyan);
 $WikiIceAndFire-accent: mat-palette($mat-deep-orange);
 
 // The warn palette is optional (defaults to red).
-$WikiIceAndFire-warn: mat-palette($mat-red);
+$WikiIceAndFire-warn: mat-palette($mat-grey, 900);
 
 // Create the theme object (a Sass map containing all of the palettes).
 $WikiIceAndFire-theme: mat-dark-theme($WikiIceAndFire-primary, $WikiIceAndFire-accent, $WikiIceAndFire-warn);

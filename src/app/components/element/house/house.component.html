@@ -3,8 +3,9 @@
 <div class="fullscreen" *ngIf="house">
 
     <div class="details">
+        <h1 class="header name"><span>{{house.name}}</span></h1>
+        <hr>
         <div>
-            <h1 class="header">Name: <span>{{house.name}}</span></h1>
             <h1 class="header">Region: <span>{{house.region}}</span></h1>
         </div>
         <div>
@@ -12,10 +13,13 @@
             <h2 class="header">Words: <span>{{house.words}}</span></h2>
             <h2 class="header">Titles: <span>{{house.titles}}</span></h2>
             <h2 class="header">Seats: <span>{{house.seats}}</span></h2>
-            <h2 class="header">Current Lord: <span><a [routerLink]="[ '/character', house.currentLord ]">{{currentLord.name}}</a></span></h2>
-            <h2 class="header">Overlord: <span><a [routerLink]="[ '/house', house.overlord ]">{{overlord.name}}</a></span></h2>
+            <h2 class="header">Current Lord: <span><a
+                        [routerLink]="[ '/character', house.currentLord ]">{{currentLord.name}}</a></span></h2>
+            <h2 class="header">Overlord: <span class="url"
+                    (click)="chargeOther(house.overlord)">{{overlord.name}}</span> </h2>
             <h2 class="header">Founded: <span>{{house.founded}}</span></h2>
-            <h2 class="header">Founder: <span><a [routerLink]="[ '/character', house.founder ]">{{founder.name}}</a></span></h2>
+            <h2 class="header">Founder: <span><a
+                        [routerLink]="[ '/character', house.founder ]">{{founder.name}}</a></span></h2>
             <h2 class="header">AncestralWeapons: <span>{{house.ancestralWeapons}}</span></h2>
         </div>
     </div>

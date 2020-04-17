@@ -14,6 +14,24 @@ export class NavbarComponent implements OnInit {
   constructor(private _api: ApiService, public auth: AuthService, private router: Router) { }
 
   ngOnInit() {
+
+    const findTerm = (term) => { if (this.router.url.includes(term)) return true; };
+
+    switch (true) {
+      case findTerm('book'):
+        this.element = 'books';
+        break;
+      case findTerm('character'):
+        this.element = 'characters';
+        break;
+      case findTerm('house'):
+        this.element = 'houses';
+        break;
+      default:
+        this.element = '';
+        break;
+    }
+
   }
 
   changeTo(element: string) {
