@@ -1,0 +1,62 @@
+@import "../../navbar/navbar.component.scss";
+
+$filter_paginator_height: 8vh;
+
+.filter_paginator {
+    height: $filter_paginator_height;
+}
+
+.tab_body {
+    padding: 1%;
+}
+
+table {
+    width: 100%;
+}
+
+.mat-elevation-z8 {
+    max-height: 100vh - $mat-toolbar-heigth - $filter_paginator_height - 5vh;
+    overflow: auto;
+}
+
+@mixin one-line {
+    display: inline-block;
+}
+
+.mat-form-field {
+    @include one-line;
+    width: 30%;
+}
+mat-paginator {
+    @include one-line;
+    float: right;
+    width: 65%;
+}
+
+::ng-deep.mat-form-field-underline,
+::ng-deep.mat-form-field-ripple {
+    background-color: black !important;
+    color: black;
+}
+::placeholder,
+mat-label {
+    color: black;
+}
+
+mat-icon {
+    color: cyan;
+    cursor: pointer;
+    &:hover {
+        color: darkorange;
+    }
+}
+
+.spinner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+mat-spinner {
+    margin-top: 5%;
+}

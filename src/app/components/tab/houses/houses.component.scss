@@ -1,41 +1,9 @@
-.tab_body {
-    padding: 1%;
-}
-
-table {
-    width: 100%;
-}
-
-.mat-form-field {
-    width: 25%;
-    display: inline-block;
-    margin-right: 25px;
-}
-
-::ng-deep.mat-form-field-underline,
-::ng-deep.mat-form-field-ripple {
-    background-color: black !important;
-    color: black;
-}
-::placeholder,
-mat-label {
-    color: black;
-}
+@import "../../../../assets/css/tab.scss";
 
 th,
 td {
     width: 10%;
-}
-
-.name_cell {
-    width: 25%;
-}
-
-mat-icon {
-    color: cyan;
-    cursor: pointer;
-}
-mat-icon:hover {
-    color: darkorange;
-    cursor: pointer;
+    &.name_cell {
+        width: 25%;
+    }
 }

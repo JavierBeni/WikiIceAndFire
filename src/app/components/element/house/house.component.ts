@@ -1,16 +1,15 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ApiService } from 'src/app/services/api.service';
 import { House } from 'src/app/models/house.model';
 import { Character } from 'src/app/models/character.model';
-
 
 @Component({
   selector: 'app-house',
   templateUrl: './house.component.html',
   styleUrls: ['./house.component.scss']
 })
-export class HouseComponent implements OnInit {
+export class HouseComponent {
 
   house: House = new House();
   overlord: House = new House();
@@ -19,6 +18,10 @@ export class HouseComponent implements OnInit {
 
   constructor(public _api: ApiService, private route: ActivatedRoute) {
     const id = this.route.snapshot.paramMap.get('id').split('/').pop();
+    this.loadHouse(id);
+  }
+
+  loadHouse(id: string) {
     this._api.getHouse(id).subscribe((resp: House) => {
       this.house = resp;
       if (this.house.currentLord) {
@@ -34,13 +37,10 @@ export class HouseComponent implements OnInit {
         this._api.getCharacter(idFounder).subscribe((resp: Character) => this.founder = resp);
       }
     });
-
-
-
-
   }
 
-  ngOnInit() {
+  chargeOther(houseURL: string) {
+    this.loadHouse(houseURL.split('/').pop());
   }
 
 }

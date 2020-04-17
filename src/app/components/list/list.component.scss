@@ -1,10 +1,6 @@
 @import '../../../styles.scss';
 @import '../navbar/navbar.component.scss';
 
-.mat-tab-group.mat-primary .mat-ink-bar{
-    background: darkred;
-    height: 5px;
-  } 
 
 /* Styles for the active tab label */
 .mat-tab-label{
@@ -13,7 +9,6 @@
 .mat-tab-label.mat-tab-label-active {
     color: darkred;
 }
-
 
 .fullscreen {
     background-image: url(../../../assets/img/gradient_diagonal.png);

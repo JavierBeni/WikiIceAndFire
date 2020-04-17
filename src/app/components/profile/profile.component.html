@@ -2,19 +2,14 @@
 
 <div class="fullscreen" *ngIf="auth.userProfile$ | async as profile">
 
-        <div class="info_profile">
-            <h1>Nick: {{profile.nickname}}</h1>
-            <h2>Name: {{profile.name}}</h2>
-            <h3>Email: {{profile.email}}</h3>
-            <button mat-button class="btn-back animated fadeIn slow" routerLink="/list">
-                Lists
-            </button>
-        </div>
+    <div class="info_profile">
+        <h1>Nick: {{profile.nickname}}</h1>
+        <h2>Name: {{profile.name}}</h2>
+        <h3>Email: {{profile.email}}</h3>
+        <button mat-button class="btn-back animated fadeIn slow" routerLink="/list/books">
+            Lists
+        </button>
+    </div>
 
-        <img src="https://s.gravatar.com/avatar/435a94b7cfb947dd0e50f607933426f7?s=480&r=pg&d=https%3A%2F%2Fcdn.auth0.com%2Favatars%2Fja.png"
-            alt="Italian Trulli">
-
-
-
+    <img [src]="profile.picture" alt="Italian Trulli">
 </div>
-

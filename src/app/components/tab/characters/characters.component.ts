@@ -14,8 +14,8 @@ import { Character } from 'src/app/models/character.model';
 })
 export class CharactersComponent implements OnInit {
 
-  charactersOriginal: Character[] = [];
-
+  characters: Character[] = [];
+  loading: boolean = true;
   displayedColumns: string[] = ['name', 'gender', 'culture', 'aliases', 'born', 'playedBy', 'detail'];
   dataSource: MatTableDataSource<Character>;
 
@@ -23,6 +23,7 @@ export class CharactersComponent implements OnInit {
   @ViewChild(MatSort, { static: true }) sort: MatSort;
 
   constructor(public auth: AuthService, public _api: ApiService, private router: Router) {
+    this.loading = true;
     this.loadCharacters(1);
   }
 
@@ -53,15 +54,16 @@ export class CharactersComponent implements OnInit {
 
     this._api.getCharacters(page.toString()).subscribe((resp: Character[]) => {
 
-      this.charactersOriginal = this.charactersOriginal.concat(resp);
+      this.characters = this.characters.concat(resp);
       if (resp.length !== 0)
         this.loadCharacters(page + 1)
       else {
-        this.charactersOriginal.sort(this.compareS);
+        this.characters.sort(this.compareS);
 
-        this.dataSource = new MatTableDataSource(this.charactersOriginal);
+        this.dataSource = new MatTableDataSource(this.characters);
         this.dataSource.paginator = this.paginator;
         this.dataSource.sort = this.sort;
+        this.loading = false;
       }
     });
   }

@@ -16,4 +16,23 @@ export class House {
     ancestralWeapons: string[];
     cadetBranches: string[];
     swornMembers: string[];
+
+    constructor() {
+        this.url = '';
+        this.name = '';
+        this.region = '';
+        this.coatOfArms = '';
+        this.words = '';
+        this.titles = [];
+        this.seats = [];
+        this.currentLord = '';
+        this.heir = '';
+        this.overlord = '';
+        this.founded = '';
+        this.founder = '';
+        this.diedOut = '';
+        this.ancestralWeapons = [];
+        this.cadetBranches = [];
+        this.swornMembers = [];
+    }
 }

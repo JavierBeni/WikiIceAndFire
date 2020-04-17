@@ -15,7 +15,7 @@ import { Router } from '@angular/router';
 export class BooksComponent implements OnInit {
 
   books: Book[] = [];
-
+  loading: boolean = true;
   displayedColumns: string[] = ['name', 'authors', 'detail'];
   dataSource: MatTableDataSource<Book>;
 
@@ -23,6 +23,7 @@ export class BooksComponent implements OnInit {
   @ViewChild(MatSort, { static: true }) sort: MatSort;
 
   constructor(public auth: AuthService, public _api: ApiService, private router: Router) {
+    this.loading = true;
     this.loadBooks(1);
   }
 
@@ -45,6 +46,7 @@ export class BooksComponent implements OnInit {
       this.dataSource = new MatTableDataSource(this.books);
       this.dataSource.paginator = this.paginator;
       this.dataSource.sort = this.sort;
+      this.loading = false;
     });
   }
 

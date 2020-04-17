@@ -3,8 +3,9 @@
 <div class="fullscreen" *ngIf="book">
 
     <div class="details">
+        <h1 class="header name"><span>{{book.name}}</span></h1>
+        <hr>
         <div>
-            <h1 class="header">Name: <span>{{book.name}}</span></h1>
             <h1 class="header">Authors: <span>{{book.authors}}</span></h1>
         </div>
         <div>

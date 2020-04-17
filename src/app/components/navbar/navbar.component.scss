@@ -10,6 +10,9 @@ a{
     color: white;
     text-decoration: none;
     margin-right: 10px;
+    &.active{
+        color: orangered;
+    }
 }
 
 $mat-toolbar-heigth: 9vh;
