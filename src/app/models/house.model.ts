@@ -1,4 +1,4 @@
-
+//Class House, properties and constructor.
 export class House {
     url: string;
     name: string;

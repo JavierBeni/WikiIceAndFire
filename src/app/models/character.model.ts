@@ -1,4 +1,4 @@
-
+//Class Character, properties and constructor.
 export class Character {
     url: string;
     name: string;

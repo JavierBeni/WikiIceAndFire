@@ -22,23 +22,22 @@ export class CharactersComponent implements OnInit {
   @ViewChild(MatPaginator, { static: true }) paginator: MatPaginator;
   @ViewChild(MatSort, { static: true }) sort: MatSort;
 
-  constructor(public auth: AuthService, public _api: ApiService, private router: Router) {
+  constructor(public auth: AuthService, public _api: ApiService, private router: Router) { }
+
+  ngOnInit() {
     this.loading = true;
     this.loadCharacters(1);
   }
-
-  ngOnInit() {
-  }
-
+  //Funtion to filter table by text in the input. Get elements with any porperty match with the text.
   applyFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;
     this.dataSource.filter = filterValue.trim().toLowerCase();
 
-    if (this.dataSource.paginator) {
+    if (this.dataSource.paginator)
       this.dataSource.paginator.firstPage();
-    }
   }
 
+  //Used this to show at first important chatacters.
   compareS(a: Character, b: Character) {
 
     if (a.playedBy[0] !== '' && b.playedBy[0] === '')
@@ -50,8 +49,9 @@ export class CharactersComponent implements OnInit {
         return (a.playedBy > b.playedBy) ? 1 : -1
   }
 
+  //Call to the service to get all characters. This is recursive beacuse the API only allow max 50 characters by call.
+  //When it finish, it put data on table.
   loadCharacters(page: number) {
-
     this._api.getCharacters(page.toString()).subscribe((resp: Character[]) => {
 
       this.characters = this.characters.concat(resp);
@@ -68,6 +68,7 @@ export class CharactersComponent implements OnInit {
     });
   }
 
+  //Go to component which show more details about character.
   detail(url: string) {
     let temp: string[] = url.split('/');
     if (temp.length > 0)

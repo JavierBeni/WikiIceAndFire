@@ -1,6 +1,6 @@
 <div class="tab_body">
 
-    <div class="filter_paginator">
+    <div class="filter_paginator animated fadeIn faster">
         <mat-form-field class="mat-form-field">
             <mat-label>Filter</mat-label>
             <input class="input" matInput (keyup)="applyFilter($event)" placeholder="Write text here">
@@ -8,7 +8,7 @@
         <mat-paginator [pageSizeOptions]="[10, 25, 50]"></mat-paginator>
     </div>
 
-    <div class="mat-elevation-z8">
+    <div class="mat-elevation-z8 animated fadeIn">
         <table mat-table [dataSource]="dataSource" matSort>
 
             <ng-container matColumnDef="name">
@@ -48,8 +48,8 @@
             <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></tr>
             <tr mat-row *matRowDef="let row; columns: displayedColumns;"> </tr>
         </table>
-
     </div>
+
     <div class="spinner" *ngIf="loading">
         <mat-spinner color="warn"></mat-spinner>
     </div>

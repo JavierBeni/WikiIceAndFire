@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ApiService } from 'src/app/services/api.service';
 import { House } from 'src/app/models/house.model';
@@ -9,18 +9,21 @@ import { Character } from 'src/app/models/character.model';
   templateUrl: './house.component.html',
   styleUrls: ['./house.component.scss']
 })
-export class HouseComponent {
+export class HouseComponent implements OnInit {
 
   house: House = new House();
   overlord: House = new House();
   founder: Character = new Character();
   currentLord: Character = new Character();
 
-  constructor(public _api: ApiService, private route: ActivatedRoute) {
+  constructor(public _api: ApiService, private route: ActivatedRoute) { }
+
+  ngOnInit(): void {
     const id = this.route.snapshot.paramMap.get('id').split('/').pop();
     this.loadHouse(id);
   }
 
+  //Recursive funtion to get all houses.
   loadHouse(id: string) {
     this._api.getHouse(id).subscribe((resp: House) => {
       this.house = resp;
@@ -39,6 +42,7 @@ export class HouseComponent {
     });
   }
 
+  //Load a House from other house.
   chargeOther(houseURL: string) {
     this.loadHouse(houseURL.split('/').pop());
   }
