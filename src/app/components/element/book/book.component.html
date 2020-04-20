@@ -3,12 +3,12 @@
 <div class="fullscreen" *ngIf="book">
 
     <div class="details">
-        <h1 class="header name"><span>{{book.name}}</span></h1>
+        <h1 class="header name animated fadeIn faster"><span>{{book.name}}</span></h1>
         <hr>
         <div>
-            <h1 class="header">Authors: <span>{{book.authors}}</span></h1>
+            <h1 class="header animated fadeIn fast">Authors: <span>{{book.authors}}</span></h1>
         </div>
-        <div>
+        <div class="animated fadeIn">
             <h2 class="header">ISBN: <span>{{book.isbn}}</span></h2>
             <h2 class="header">Number of pages: <span>{{book.numberOfPages}}</span></h2>
             <h2 class="header">Publisher: <span>{{book.country}}</span></h2>

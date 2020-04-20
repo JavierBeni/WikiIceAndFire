@@ -1,6 +1,6 @@
 <app-navbar></app-navbar>
 
-<div class="fullscreen" *ngIf="auth.userProfile$ | async as profile">
+<div class="fullscreen animated fadeIn slow" *ngIf="auth.userProfile$ | async as profile">
 
     <div class="info_profile">
         <h1>Nick: {{profile.nickname}}</h1>

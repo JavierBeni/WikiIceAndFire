@@ -1,4 +1,4 @@
-
+//Class Book, properties and constructor.
 export class Book {
     url: string;
     name: string;
